@@ -108,11 +108,11 @@ console.log(toCase(0,str));
 
 function startOrEnd(str,underStr)
 {
-    if(str.endsWith(underStr))
+    if(str.endsWith(underStr) || str.startsWith(underStr))
     {
         return true;
     }
     return false;
 }
 
-console.log(startOrEnd(str,'ipt'));
+console.log(startOrEnd(str,'Ja'));
