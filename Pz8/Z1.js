@@ -20,7 +20,7 @@ Queue = {
     },
 
     showQueue: function () {
-        str = "abcdefghijklmnopqrstuvwxyz"
+        const str = "abcdefghijklmnopqrstuvwxyz"
         this.commands.forEach((item,index) => {
             console.log(str[index], ". ", item.command);
         })
