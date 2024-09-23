@@ -1,39 +1,32 @@
 function showtype(arg) {
     var type = typeof (arg);
 
-    switch (type) {
-        case 'null':
-            if (!!arg == true) {
+    if (!!arg === true) {
+        switch (type) {
+            case 'null':
                 console.log('Отсутствие значения')
                 break
-            }
-        case 'string':
-            if (!!arg == true) {
+            case 'string':
                 console.log('Строка')
                 break
-            }
-        case 'object':
-            if (!!arg == true) {
+
+            case 'object':
                 console.log('Объект')
                 break
-            }
-        case 'number':
-            if (!!arg == true) {
+
+            case 'number':
                 console.log('Число')
                 break
-            }
-        case 'boolean':
-            if (!!arg == true) {
+
+            case 'boolean':
                 console.log('Логический тип')
                 break
-            }
-        case 'function':
-            if (!!arg == true) {
+
+            case 'function':
                 console.log('Функция')
                 break
-            }
+        }
     }
-
 }
 
-showtype('');
+showtype('2');

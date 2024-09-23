@@ -17,20 +17,21 @@ function central(dots) {
     dots.forEach((item1) => {
         dots.forEach(item2 => {
             switch (searchNeibours(item1, item2)) {
-                case -1:
-                    return ++niz;
                 case 0:
-                    return ++ver;
+                    return ++niz;
                 case 1:
-                    return ++lev;
+                    return ++ver;
                 case 2:
+                    return ++lev;
+                case 3:
                     return ++pr;
             }
 
         })
-        if (niz>=1 && ver>=1 && lev>=1 && pr>=1) {
-            k++;
-        }
+        const test = proverka([niz, ver, lev, pr]);
+        if (test) {
+            k++
+        };
         niz = 0;
         ver = 0;
         lev = 0;
@@ -42,18 +43,30 @@ function central(dots) {
 }
 
 function searchNeibours(item1, item2) {
+    let res = -1;
     if (item1[0] === item2[0] && item1[1] > item2[1]) {
-        return -1;
+        res = 0;
     }
     if (item1[0] === item2[0] && item1[1] < item2[1]) {
-        return 0;
+        res = 1;
     }
     if (item1[0] > item2[0] && item1[1] === item2[1]) {
-        return 1;
+        res = 2;
     }
     if (item1[0] < item2[0] && item1[1] === item2[1]) {
-        return 2;
+        res = 3;
     }
+    return res;
+}
+
+const proverka = (arr) => {
+    let flag = true;
+    arr.forEach((item) => {
+        if (item < 1) {
+            flag = false
+        };
+    })
+    return flag;
 }
 
 console.log(central(dots));

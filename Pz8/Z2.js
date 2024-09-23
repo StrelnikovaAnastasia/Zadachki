@@ -30,7 +30,7 @@ var HappyBirthday = {
             monthNorm = "0" + monthNorm;
         }
 
-        if (Number(dayNorm) > 31 || Number(monthNorm) > 12 || Number(dayNorm) <= 0 || Number(monthNorm) <= 0){
+        if (Number(dayNorm) > 31 || Number(monthNorm) > 12 || Number(dayNorm) <= 0 || Number(monthNorm) <= 0) {
             console.log("Дата введена некорректно, данные не внесены");
             return;
         }
