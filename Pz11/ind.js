@@ -52,8 +52,11 @@ button_ost.textContent = "%";
 divForm.id = "div_form";
 form.id = "form";
 for_input1.id = "for_input1";
+for_input1.classList.add("form-field")
 for_input2.id = "for_input2";
+for_input2.classList.add("form-field")
 for_output.id = "for_output";
+for_output.classList.add("form-field")
 button_pl.id = "button";
 button_min.id = "button";
 button_st.id = "button";
@@ -64,38 +67,38 @@ button_ost.id = "button";
 $.addEventListener("submit", (e) => { e.preventDefault() });
 
 button_pl.addEventListener("click", () => {
-    const ch1 = parseInt($.getElementById("for_input1").value);
-    const ch2 = parseInt($.getElementById("for_input2").value);
-    $.getElementById("for_output").value = ch1 + ch2
+    const ch1 = Number(for_input1.value);
+    const ch2 = Number(for_input2.value);
+    for_output.value = ch1 + ch2
 })
 
 button_min.addEventListener("click", () => {
-    const ch1 = parseInt($.getElementById("for_input1").value);
-    const ch2 = parseInt($.getElementById("for_input2").value);
-    $.getElementById("for_output").value = ch1 - ch2
+    const ch1 = Number(for_input1.value);
+    const ch2 = Number(for_input2.value);
+    for_output.value = ch1 - ch2
 })
 
 button_st.addEventListener("click", () => {
-    const ch1 = parseInt($.getElementById("for_input1").value);
-    const ch2 = parseInt($.getElementById("for_input2").value);
-    $.getElementById("for_output").value = ch1 ** ch2
+    const ch1 = Number(for_input1.value);
+    const ch2 = Number(for_input2.value);
+    for_output.value = ch1 ** ch2
 
 })
 
 button_umn.addEventListener("click", () => {
-    const ch1 = parseInt($.getElementById("for_input1").value);
-    const ch2 = parseInt($.getElementById("for_input2").value);
-    $.getElementById("for_output").value = ch1 * ch2
+    const ch1 = Number(for_input1.value);
+    const ch2 = Number(for_input2.value);
+    for_output.value = ch1 * ch2
 })
 
 button_del.addEventListener("click", () => {
-    const ch1 = parseInt($.getElementById("for_input1").value);
-    const ch2 = parseInt($.getElementById("for_input2").value);
-    $.getElementById("for_output").value = ch1 / ch2
+    const ch1 = Number(for_input1.value);
+    const ch2 = Number(for_input2.value);
+    for_output.value = ch1 / ch2
 })
 
 button_ost.addEventListener("click", () => {
-    const ch1 = parseInt($.getElementById("for_input1").value);
-    const ch2 = parseInt($.getElementById("for_input2").value);
-    $.getElementById("for_output").value = ch1 % ch2
+    const ch1 = Number(for_input1.value);
+    const ch2 = Number(for_input2.value);
+    for_output.value = ch1 % ch2
 })
