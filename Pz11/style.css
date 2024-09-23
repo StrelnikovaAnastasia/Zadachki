@@ -1,0 +1,55 @@
+body {
+    font-size: 20 px;
+}
+
+#div_form {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form {
+    width: 1000px;
+    display: flex;
+}
+
+#for_input1 {
+    padding: 10px;
+    width: 180px;
+    height: 10px;
+    border-style: double;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#for_input2 {
+    padding: 10px;
+    width: 180px;
+    height: 10px;
+    border-style: double;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#for_output {
+    padding: 10px;
+    width: 180px;
+    height: 10px;
+    border-style: double;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#button {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    border-radius: 10px;
+}
