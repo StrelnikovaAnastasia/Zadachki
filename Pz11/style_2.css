@@ -1,0 +1,54 @@
+body {
+    font-size: 20 px;
+}
+
+#div_form {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form {
+    width: 1000px;  
+}
+
+.text_name {
+    text-align: center;
+    color: #741b47;
+    font-size: 20px;
+    font-weight: bold;   
+}
+
+.form_input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    text-align: center;
+}
+
+#button {
+    background-color: #ead1dc;
+    color: #741b47;
+    font-weight: bold;
+    display: inline-block;
+    padding: 8px 10px 23px 10px;
+    width: 250px;
+    height: 30px;
+    margin: 2px;
+    border-radius: 10px;
+}
+
+.for_input {
+    padding: 10px;
+    width: 730px;
+    height: 20px;
+    border-style: double;
+    border-radius: 10px;
+    margin: 10px;
+}
