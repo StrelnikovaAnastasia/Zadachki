@@ -61,62 +61,23 @@ button_4.id = "button";
 
 $.addEventListener("submit", (e) => { e.preventDefault() });
 
-//Сделать первую букву заглавной
-button_1.addEventListener("click", () => {
-    let sentence = for_input.value;
-    if (!sentence) {
-        alert("Вы не ввели предложение");
-        return;
-    };
-    sentence = sentence[0].toUpperCase() + sentence.slice(1);
-    for_input.value = sentence;
-});
-
-//Убрать лишние пробелы
-button_2.addEventListener("click", () => {
-    let sentence = for_input.value;
-    if (!sentence) {
-        alert("Вы не ввели предложение");
-        return;
-    };
-    sentence = sentence.replace(/\s/g, "");
-    for_input.value = sentence;
-});
-
-//Поставить точку
-button_3.addEventListener("click", () => {
-    let sentence = for_input.value;
-    if (!sentence) {
-        alert("Вы не ввели предложение");
-        return;
-    };
-    const mark = [".", "?", "!"];
-    const lastIndex = sentence.length - 1;
-    const lastEl = sentence[lastIndex];
-    let markRight = false;
-    mark.forEach((item) => {
-        if (item === lastEl) {
-            markRight = true;
+function setConvertListener(btn, converter) {
+    btn.addEventListener("click", () => {
+        let sentence = for_input.value;
+        if (!sentence) {
+            alert("Вы не ввели предложение");
+            return;
         };
+        for_input.value = converter(sentence);
     });
-    if (markRight) {
-        sentence = sentence.replace(lastEl, ".", -1);
-    } else {
-        sentence += ".";
-    };
-    for_input.value = sentence;
-});
+};
 
-//Поставить многоточие
-button_4.addEventListener("click", () => {
-    let sentence = for_input.value;
-    if (!sentence) {
-        alert("Вы не ввели предложение");
-        return;
-    };
-    let len = sentence.length;
-    if (len > 100) {
-        sentence = sentence.slice(0, 100) + "...";
-    };
-    for_input.value = sentence;
+setConvertListener(button_1, (s) => s[0].toUpperCase() + s.slice(1));
+setConvertListener(button_2, (s) => s.replace(/\s/g, ""));
+setConvertListener(button_3, (s) => {
+    const mark = [".", "?", "!"];
+    const lastEl = s[s.length - 1];
+    let markRight = mark.reduce((prev, val) => prev || val === lastEl, false);
+    return markRight ? s.replace(lastEl, ".", -1) : s + ".";
 });
+setConvertListener(button_4, (s) => s.length > 100 ? s.slice(0, 100) + "..." : s);

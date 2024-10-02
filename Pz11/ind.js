@@ -66,39 +66,17 @@ button_ost.id = "button";
 
 $.addEventListener("submit", (e) => { e.preventDefault() });
 
-button_pl.addEventListener("click", () => {
-    const ch1 = Number(for_input1.value);
-    const ch2 = Number(for_input2.value);
-    for_output.value = ch1 + ch2
-})
+function setConvertListener(btn, converter) {
+    btn.addEventListener("click", () => {
+        const ch1 = Number(for_input1.value);
+        const ch2 = Number(for_input2.value);
+        for_output.value = converter(ch1, ch2);       
+    });
+};
 
-button_min.addEventListener("click", () => {
-    const ch1 = Number(for_input1.value);
-    const ch2 = Number(for_input2.value);
-    for_output.value = ch1 - ch2
-})
-
-button_st.addEventListener("click", () => {
-    const ch1 = Number(for_input1.value);
-    const ch2 = Number(for_input2.value);
-    for_output.value = ch1 ** ch2
-
-})
-
-button_umn.addEventListener("click", () => {
-    const ch1 = Number(for_input1.value);
-    const ch2 = Number(for_input2.value);
-    for_output.value = ch1 * ch2
-})
-
-button_del.addEventListener("click", () => {
-    const ch1 = Number(for_input1.value);
-    const ch2 = Number(for_input2.value);
-    for_output.value = ch1 / ch2
-})
-
-button_ost.addEventListener("click", () => {
-    const ch1 = Number(for_input1.value);
-    const ch2 = Number(for_input2.value);
-    for_output.value = ch1 % ch2
-})
+setConvertListener(button_pl, (ch1, ch2) => ch1 + ch2);
+setConvertListener(button_min, (ch1, ch2) => ch1 - ch2);
+setConvertListener(button_st, (ch1, ch2) => ch1 ** ch2);
+setConvertListener(button_umn, (ch1, ch2) => ch1 * ch2);
+setConvertListener(button_del, (ch1, ch2) => ch1 / ch2);
+setConvertListener(button_ost, (ch1, ch2) => ch1 % ch2);

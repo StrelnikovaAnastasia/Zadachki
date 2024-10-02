@@ -1,0 +1,101 @@
+body {
+    font-size: 20 px;
+    background-color: #E0FFFF;
+}
+
+#div_form {
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+#form {
+    width: 700px; 
+    height: 300px;
+}
+
+.postcard {
+    visibility: hidden;
+    width: 700px; 
+    height: 300px;
+}
+
+.postcard_visible {
+    display: flex;
+    width: 700px; 
+    height: 300px;
+}
+
+.header {
+    text-align: left;
+    color: #4169E1;
+}
+
+.titles {
+    display: flex;
+    justify-content: left;
+    height: 38px;
+}
+
+.theme-postcard {
+    flex-direction: column;
+    width: 500px;
+    height: 300px;
+    background-color: #ADD8E6;
+    border-radius: 10px;
+    border-color: #4169E1;
+}
+
+.titles__item {
+    padding: 10px 15px 10px 10px;
+    text-align: left;
+    color: #6495ED;
+    font-size: 16px;
+    font-style: oblique; 
+}
+
+.otstup {
+    margin-right: 95px;
+}
+
+.size-m {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.input {
+    display: flex;
+    justify-content: left;
+}
+
+.input__item {
+    padding: 6px;
+    margin-right: 10px;
+    border-style: double;
+    border-radius: 13px;
+
+}
+
+.input_text {
+    height: 60px;
+    width: 600px;
+    border-style: double;
+    border-radius: 8px;
+}
+
+.button {
+    background-color: #F0F8FF;
+    color: #6495ED;
+    font-weight: bold;
+    display: inline-block;
+    padding: 8px 10px 22px 10px;
+    width: 130px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: #4169E1;
+    font-style: oblique;
+}
