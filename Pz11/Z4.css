@@ -1,0 +1,57 @@
+#div_form {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form {
+    width: 700px;
+    height: 300px;
+    text-align: center;
+}
+
+.header {
+    color: #DB7093;
+    text-align: center;
+}
+
+.text {
+    padding: 10px 15px 10px 10px;
+    font-style: oblique;
+    color: #DB7093;
+    text-align: left;
+}
+
+.input {
+    padding: 10px;
+    border-radius: 10px;
+    border-style: double;
+    width: 700px;
+    height: 80px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn__item {
+    margin: 10px;
+    width: auto;
+    height: 30px;
+    padding: auto;
+    color: black;
+    border-radius: 5px;
+}
+
+.btn-true {
+    background-color: aquamarine;
+}
+
+.btn-false {
+    background-color: crimson;
+}
