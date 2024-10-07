@@ -1,0 +1,76 @@
+#div_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+#form {
+    width: 250px;
+    height: 250px;
+    margin: 5px;
+    background-color: #ffe6e6;
+    border-color: #ff9999;
+    border-radius: 5px;
+    border-style: double;
+}
+
+.listQuestions {
+    visibility: hidden;
+}
+
+.listQuestions_visible {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    margin: 5px;
+}
+
+.list {
+    color: #ff9999;
+    font-style: oblique;
+    margin: 5px;
+}
+
+.size-m {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.header {
+    color: #ff9999;
+    text-align: center;
+}
+
+.title {
+    color: #ff9999;
+    font-style: oblique;
+    margin: 5px;
+}
+
+.input {
+    margin: 5px;
+    padding: auto;
+    border-color: #ff9999;
+    border-radius: 5px;
+    border-style: double;
+    height: 20px;
+}
+
+.button {
+    color: #ff9999;
+    background-color: #ffe6e6;
+    border-color: #ff9999;
+    border-radius: 5px;
+    border-style: double;
+    font-weight: bold;
+    padding: auto;
+    width: 30px;
+    height: 30px;
+}
+
+
+
