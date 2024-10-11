@@ -108,28 +108,82 @@ titles_result__item_answer5.classList.add("titles-result__item");
 
 $.addEventListener("submit", (e) => { e.preventDefault() });
 
+const IsWords = (str) => /^[a-zA-Zа-яА-Я]*$/.test(str);
+const IsNumeric = (str) => /^[0-9]*$/.test(str);
+const NotAnswer = (answer, convertor) => {
+    while (!(answer.trim())) {
+        alert("Вы не ввели ответ на вопрос");
+        answer = convertor();
+    };
+};
+
 button.addEventListener("click", () => {
-    if (!input__item_name.value) {
+    const name = input__item_name.value;
+    const lastname = input__item_lastname.value;
+    const group = input__item_group.value;
+
+    if (!(name).trim()) {
         alert("Вы не внесли свое имя");
         return;
     };
-    if (!input__item_lastname.value) {
+    if (!(lastname).trim()) {
         alert("Вы не внесли свою фамилию");
         return;
     };
-    if (!input__item_group.value) {
+    if (!(group).trim()) {
         alert("Вы не внесли свою группу");
         return;
     };
-    const answer1 = prompt('Сколько тебе лет?');
-    const answer2 = prompt('Из какого ты города?');
-    const answer3 = prompt('Ты lalala или okeoke?');
-    const answer4 = prompt('Какой у тебя телефон?');
-    const answer5 = prompt('Продолжи фразу: арбуз арбуз...');
+    if (!IsWords(name)) {
+        alert("Имя не может содержать цифры и иные знаки");
+        $.getElementById("input_1").value = "";
+        return;
+    };
+    if (!IsWords(lastname)) {
+        alert("Фамилия не может содержать цифры и иные знаки");
+        $.getElementById("input_2").value = "";
+        return;
+    };
 
-    titles_result__item_name.textContent = "Имя: " + input__item_name.value;
-    titles_result__item_lastname.textContent = "Фамилия: " + input__item_lastname.value;
-    titles_result__item_group.textContent = "Группа: " + input__item_group.value;
+    let answer1 = prompt('Сколько тебе лет?');
+    NotAnswer(answer1, () => answer1 = prompt('Сколько тебе лет?'));
+    while (!IsNumeric(answer1)) {
+        alert("Возраст не может содержать букв и символов");
+        answer1 = prompt('Сколько тебе лет?');
+    };
+
+    let answer2 = prompt('Из какого ты города?');
+    NotAnswer(answer2, () => answer2 = prompt('Из какого ты города?'));
+    while (!IsWords(answer2)) {
+        alert("Название города не может содержать цифр и символов");
+        answer2 = prompt('Из какого ты города?');
+    };
+
+    let answer3 = prompt('Ты lalala или okeoke?');
+    NotAnswer(answer3, () => answer3 = prompt('Ты lalala или okeoke?'));
+    while (!(answer3 == "lalala" || answer3 == "okeoke")) {
+        alert("Ответ может быть только lalala или okeoke");
+        answer3 = prompt('Ты lalala или okeoke?');
+    };
+
+    let answer4 = prompt('Какой у тебя номер телефона?');
+    NotAnswer(answer4, () => answer4 = prompt('Какой у тебя номер телефона?'));
+    while (!IsNumeric(answer4)) {
+        alert("Номер телефона не может содержать букв и символов");
+        answer4 = prompt('Какой у тебя номер телефона?');
+    };
+
+    let answer5 = prompt('Продолжи фразу: арбуз арбуз...');
+    NotAnswer(answer5, () => answer5 = prompt('Продолжи фразу: арбуз арбуз...'));
+    while (!IsWords(answer5)) {
+        alert("Эта фраза не может содержать цифр и символов");
+        answer5 = prompt('Продолжи фразу: арбуз арбуз...');
+    };
+
+
+    titles_result__item_name.textContent = "Имя: " + name;
+    titles_result__item_lastname.textContent = "Фамилия: " + lastname;
+    titles_result__item_group.textContent = "Группа: " + group;
     titles_result__item_result.textContent = "Результаты анкетирования:";
     titles_result__item_answer1.textContent = "Возраст: " + answer1;
     titles_result__item_answer2.textContent = "Город: " + answer2;

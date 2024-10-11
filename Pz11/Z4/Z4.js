@@ -88,6 +88,8 @@ btn_item_7.id = "button_7";
 btn_item_8.classList.add("btn__item", "btn-false");
 btn_item_8.id = "button_8";
 
+input.disabled = true;
+
 $.addEventListener("submit", (e) => { e.preventDefault() });
 
 function setConvertListener(btn) {

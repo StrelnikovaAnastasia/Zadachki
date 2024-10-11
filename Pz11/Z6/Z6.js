@@ -77,6 +77,6 @@ button.addEventListener("click", () => {
     listQuestions.classList.replace("listQuestions", "listQuestions_visible")
     const quest = $.createElement("li");
     list.appendChild(quest);
-    title_anket.innerHTML = input_title.value;
-    quest.innerHTML = "Вопрос №" + k + "<br />" + input_text.value;
+    title_anket.textContent = input_title.value;
+    quest.textContent = "Вопрос №" + k + '\r\n' + input_text.value;
 })
