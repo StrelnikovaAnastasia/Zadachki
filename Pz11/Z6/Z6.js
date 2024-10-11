@@ -65,11 +65,11 @@ $.addEventListener("submit", (e) => { e.preventDefault() });
 let k = 0;
 
 button.addEventListener("click", () => {
-    if (!input_title.value) {
+    if (!(input_title.value.trim())) {
         alert("Вы не внесли название анкеты")
         return;
     };
-    if (!input_text.value) {
+    if (!(input_text.value.trim())) {
         alert("Вы не внесли текст вопроса")
         return;
     };
