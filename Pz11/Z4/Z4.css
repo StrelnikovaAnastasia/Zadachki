@@ -13,11 +13,6 @@
     text-align: center;
 }
 
-.header {
-    color: #DB7093;
-    text-align: center;
-}
-
 .text {
     padding: 10px 15px 10px 10px;
     font-style: oblique;
@@ -25,12 +20,64 @@
     text-align: left;
 }
 
+.header {
+    color: #DB7093;
+}
+
 .input {
     padding: 10px;
     border-radius: 10px;
     border-style: double;
+    border-color: #DB7093;
+    color: #DB7093;
     width: 700px;
-    height: 80px;
+    height: 100px;
+}
+
+.btn__item {
+    display: inline-block;
+    padding: 10px 10px 30px 10px;
+    margin: 10px;
+    width: auto;
+    height: 30px;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+&:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #DB7093;
+    border-radius: 10rem;
+    z-index: -2;
+}
+&:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #FFC0CB;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+}
+&:hover {
+    color: #fff;
+    &:before {
+    width: 100%;
+        }
+    }
 }
 
 .btn {
@@ -39,19 +86,10 @@
     justify-content: center;
 }
 
-.btn__item {
-    margin: 10px;
-    width: auto;
-    height: 30px;
-    padding: auto;
-    color: black;
-    border-radius: 5px;
-}
-
 .btn-true {
-    background-color: aquamarine;
+    background-color: #FFC0CB;
 }
 
 .btn-false {
-    background-color: crimson;
+    background-color: #DB7093;
 }

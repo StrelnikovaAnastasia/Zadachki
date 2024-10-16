@@ -26,6 +26,7 @@
 }
 
 .header {
+    margin: 10px;
     color: lightslategrey;
     text-align: center;
 }
@@ -36,7 +37,7 @@
 }
 
 .titles__item {
-    width: 70px;
+    width: 100px;
     height: 25px;
     color: lightslategrey;
     font-style: oblique;
@@ -48,7 +49,7 @@
     align-items: left;
     flex-direction: column;
     width: 300px;
-    height: 600px;
+    height: 500px;
     background-color: #ADD8E6;
     border-radius: 10px;
     border-color: #4169E1;
@@ -65,33 +66,45 @@
 
 .size-m {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .otstup {
-    margin-right: 100px;
+    margin-right: 68px;
 }
 
 .input {
     display: flex;
-    align-items: left;
+    align-items: center;
 }
 
 .input__item {
     margin-right: 50px;
-    width: 110px;
-    height: 20px;
+    width: 115px;
+    height: 25px;
     border-style: double;
     border-radius: 10px;
 }
 
+.btns {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
 .button {
-    color: lightslategrey;
-    padding: auto;
-    background-color: aliceblue;
+    display: flex;
+    color: #fff;
+    padding: 5px;
+    background-color: #D3D3D3;
+    border-color: lightslategrey;
     width: 200px;
-    height: 30px;
+    height: 40px;
     font-weight: bold;
     border-style: double;
     border-radius: 10px;
+}
+.button:hover {
+    background-color: lightslategrey;
+    transition: 0.7s;
 }
