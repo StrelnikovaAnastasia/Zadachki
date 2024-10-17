@@ -40,14 +40,14 @@ var arr = [1, 2, 3, 4];
 
 // 2.1
 
-// function factorial(arr)
-// {
-// arr.forEach(n => {
-// console.log("Факториал числа ", n, " = ", Math.fact(n))
-// });
-// }
+function factorial(arr) {
+    const res = arr.reduce((prev, value) => {
+        return prev *= value;
+    })
+    return res;
+}
 
-// factorial(arr);
+console.log(factorial(arr));
 
 // 2.2
 

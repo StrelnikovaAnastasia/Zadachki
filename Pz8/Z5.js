@@ -12,7 +12,7 @@ var FirstClass = {
     ],
 
     get property() {
-        const compareFastAlf = (a, b) => String(a.name).localeCompare(b.name);
+        const compareFastAlf = (a, b) => (a.name).localeCompare(b.name);
         const compareFastVozr = (a, b) => a.age - b.age;
         this.children.sort(compareFastAlf);
         this.children.sort(compareFastVozr);
@@ -26,6 +26,7 @@ var FirstClass = {
     }
 }
 
-FirstClass.property = { name: "наСтя", age: 8 };
+FirstClass.property = { name: "анаСтя", age: 8 };
+FirstClass.property = { name: "анаСтя", age: 8 };
 console.log(FirstClass.children);
 console.log(FirstClass.property);

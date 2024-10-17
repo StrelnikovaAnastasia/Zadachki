@@ -1,3 +1,9 @@
+const oneNum = (number => {
+    if (number.length == 1 && Number(number) > 0 && Number(number) <= 9) {
+        number = "0" + number;
+    }
+    return number;
+});
 var HappyBirthday = {
     hDays: [
         { name: "Dave", month: "09", day: "04" },
@@ -23,12 +29,9 @@ var HappyBirthday = {
 
         let dayNorm = String(monthDay[1]);
         let monthNorm = String(monthDay[0]);
-        if (dayNorm.length == 1 && Number(dayNorm) > 0 && Number(dayNorm) <= 9) {
-            dayNorm = "0" + dayNorm;
-        }
-        if (monthNorm.length == 1 && Number(monthNorm) > 0 && Number(monthNorm) <= 9) {
-            monthNorm = "0" + monthNorm;
-        }
+
+        dayNorm = oneNum(dayNorm);
+        monthNorm = oneNum(monthNorm);
 
         if (Number(dayNorm) > 31 || Number(monthNorm) > 12 || Number(dayNorm) <= 0 || Number(monthNorm) <= 0) {
             console.log("Дата введена некорректно, данные не внесены");
@@ -39,9 +42,7 @@ var HappyBirthday = {
     },
 
     showDataOnMonth: function (month) {
-        if (month.length == 1 && Number(month) > 0 && Number(month) <= 9) {
-            month = "0" + month;
-        }
+        month = oneNum(month);
         this.hDays.forEach((item) => {
             if (item.month == month) {
                 console.log(item.name);
@@ -51,6 +52,6 @@ var HappyBirthday = {
 }
 
 console.log(HappyBirthday.property);
-HappyBirthday.property = { name: "nAsTyA", day: "01/12" };
+HappyBirthday.property = { name: "nAsTyA", day: "1/12" };
 console.log(HappyBirthday.hDays);
 HappyBirthday.showDataOnMonth('2');
