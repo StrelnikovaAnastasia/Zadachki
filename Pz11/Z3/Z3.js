@@ -5,54 +5,51 @@ const form = $.createElement("form");
 
 const header = $.createElement("header");
 const size = $.createElement("h3");
-const pf = $.createElement("p");
+const p = $.createElement("p");
 const titles = $.createElement("div");
-const text_1 = $.createElement("div");
-const text_2 = $.createElement("div");
-const text_3 = $.createElement("div");
+const titles__itemSender = $.createElement("div");
+const titles__itemRecipient = $.createElement("div");
+const titles__itemHeader = $.createElement("div");
 const input = $.createElement("div");
-const intLabel_1 = $.createElement("label");
-const input_1 = $.createElement("input");
-const intLabel_2 = $.createElement("label");
-const input_2 = $.createElement("input");
-const intLabel_3 = $.createElement("label");
-const input_3 = $.createElement("input");
+const itemSenderLabel = $.createElement("label");
+const input__itemSender = $.createElement("input");
+const itemRecipientLabel = $.createElement("label");
+const input__itemRecipient = $.createElement("input");
+const itemHeaderLabel = $.createElement("label");
+const input__itemHeader = $.createElement("input");
 const text = $.createElement("div");
-const intLabel_text = $.createElement("label");
-const input_text = $.createElement("input");
-const btnLabel = $.createElement("label");
+const inputTextLabel = $.createElement("label");
+const inputText = $.createElement("input");
+const buttonLabel = $.createElement("label");
 const button = $.createElement("button");
-const text_postcard_1 = $.createElement("div");
-const text_postcard_2 = $.createElement("div");
-const head_postcard = $.createElement("div");
 
 divForm.appendChild(form);
 form.appendChild(header);
 form.appendChild(titles);
 form.appendChild(input);
 form.appendChild(text);
-form.appendChild(intLabel_text);
-form.appendChild(pf);
-form.appendChild(btnLabel);
+form.appendChild(inputTextLabel);
+form.appendChild(p);
+form.appendChild(buttonLabel);
 header.appendChild(size);
-titles.appendChild(text_1);
-titles.appendChild(text_2);
-titles.appendChild(text_3);
-input.appendChild(intLabel_1);
-input.appendChild(intLabel_2);
-input.appendChild(intLabel_3);
-intLabel_text.appendChild(input_text);
-btnLabel.appendChild(button);
-intLabel_1.appendChild(input_1);
-intLabel_2.appendChild(input_2);
-intLabel_3.appendChild(input_3);
+titles.appendChild(titles__itemSender);
+titles.appendChild(titles__itemRecipient);
+titles.appendChild(titles__itemHeader);
+input.appendChild(itemSenderLabel);
+input.appendChild(itemRecipientLabel);
+input.appendChild(itemHeaderLabel);
+inputTextLabel.appendChild(inputText);
+buttonLabel.appendChild(button);
+itemSenderLabel.appendChild(input__itemSender);
+itemRecipientLabel.appendChild(input__itemRecipient);
+itemHeaderLabel.appendChild(input__itemHeader);
 
 $.body.appendChild(divForm);
 
 size.textContent = "Создание открытки";
-text_1.textContent = "Отправитель";
-text_2.textContent = "Адресат";
-text_3.textContent = "Заголовок";
+titles__itemSender.textContent = "Отправитель";
+titles__itemRecipient.textContent = "Адресат";
+titles__itemHeader.textContent = "Заголовок";
 text.textContent = "Текст сообщения";
 button.textContent = "Отправить";
 
@@ -60,49 +57,71 @@ divForm.id = "div_form";
 form.id = "form";
 header.classList.add("header");
 titles.classList.add("titles");
-text_1.classList.add("titles__item", "otstup");
-text_2.classList.add("titles__item", "otstup");
-text_3.classList.add("titles__item", "otstup");
+titles__itemSender.classList.add("titles__item", "otstup");
+titles__itemRecipient.classList.add("titles__item", "otstup");
+titles__itemHeader.classList.add("titles__item", "otstup");
 input.classList.add("input");
-input_1.id = "input_1";
-input_1.classList.add("input__item");
-input_2.id = "input_2";
-input_2.classList.add("input__item");
-input_3.id = "input_3";
-input_3.classList.add("input__item");
+input__itemSender.id = "input__itemSender";
+input__itemSender.classList.add("input__item");
+input__itemSender.dataset.error = "Вы не ввели имя отправителя";
+input__itemRecipient.id = "input__itemRecipient";
+input__itemRecipient.classList.add("input__item");
+input__itemRecipient.dataset.error = 'Вы не ввели имя адресата';
+input__itemHeader.id = "input__itemHeader";
+input__itemHeader.classList.add("input__item");
+input__itemHeader.dataset.error = 'Вы не ввели заголовок';
 text.classList.add("text");
 text.classList.add("titles__item");
-input_text.classList.add("input_text");
+inputText.classList.add("inputText");
+inputText.dataset.error = 'Вы не ввели текст сообщения';
 button.classList.add("button");
 
 const postcard = $.createElement("form");
-const titles_postcard = $.createElement("div");
-const text_1_postcard = $.createElement("div");
-const text_2_postcard = $.createElement("div");
-const text_3_postcard = $.createElement("div");
-const text_4_postcard = $.createElement("div");
+const titlesPostcard = $.createElement("div");
+const titlesPostcard__itemSender = $.createElement("div");
+const titlesPostcard__itemRecipient = $.createElement("div");
+const titlesPostcard__itemHeader = $.createElement("div");
+const titlesPostcard__itemText = $.createElement("div");
 
 divForm.appendChild(postcard);
-postcard.appendChild(titles_postcard);
-titles_postcard.appendChild(text_1_postcard);
-titles_postcard.appendChild(text_2_postcard);
-titles_postcard.appendChild(text_3_postcard);
-titles_postcard.appendChild(text_4_postcard);
+postcard.appendChild(titlesPostcard);
+titlesPostcard.appendChild(titlesPostcard__itemSender);
+titlesPostcard.appendChild(titlesPostcard__itemRecipient);
+titlesPostcard.appendChild(titlesPostcard__itemHeader);
+titlesPostcard.appendChild(titlesPostcard__itemText);
 
 postcard.classList.add("postcard");
-titles_postcard.classList.add("titles", "theme-postcard");
-text_1_postcard.classList.add("titles__item");
-text_2_postcard.classList.add("titles__item");
-text_3_postcard.classList.add("titles__item", "size-m");
-text_4_postcard.classList.add("titles__item");
+titlesPostcard.classList.add("titles", "theme-postcard");
+titlesPostcard__itemSender.classList.add("titles__item");
+titlesPostcard__itemRecipient.classList.add("titles__item");
+titlesPostcard__itemHeader.classList.add("titles__item", "size-m");
+titlesPostcard__itemText.classList.add("titles__item");
 
 $.addEventListener("submit", (e) => { e.preventDefault() });
 
+const isEmpty = (item) => {
+    if (!item.value.trim()) {
+        alert(item.dataset.error)
+        return true;
+    }
+    return false;
+}
+
 button.addEventListener("click", () => {
-    text_1_postcard.textContent = "Отправитель: " + input_1.value;
-    text_2_postcard.textContent = "Адресат: " + input_2.value;
-    text_3_postcard.textContent = input_3.value;
-    text_4_postcard.textContent = input_text.value;
+    const sender = input__itemSender.value.trim();
+    const recipient = input__itemRecipient.value.trim();
+    const header = input__itemHeader.value.trim();
+    const text = inputText.value.trim();
+
+    if (isEmpty(input__itemSender)) return;
+    if (isEmpty(input__itemRecipient)) return;
+    if (isEmpty(input__itemHeader)) return;
+    if (isEmpty(inputText)) return;
+
+    titlesPostcard__itemSender.textContent = "Отправитель: " + sender;
+    titlesPostcard__itemRecipient.textContent = "Адресат: " + recipient;
+    titlesPostcard__itemHeader.textContent = header;
+    titlesPostcard__itemText.textContent = text;
 
     if (!$.querySelector('postcard_visible')) {
         postcard.classList.replace("postcard", "postcard_visible");

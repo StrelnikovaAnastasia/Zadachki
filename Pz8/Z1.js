@@ -18,7 +18,7 @@ Queue = {
         const obj = {
             id: String((this.commands.length + 1)
                 + "-command"), command: command
-        };
+        }
         this.commands.push(obj);
     },
 

@@ -13,9 +13,9 @@ function write(paragraph) {
         sentences.push({
             sentence: prh[index] += ".",
             length: words[index].length, words: words[index]
-        });
+        })
         sentences[index].words.push(".");
-    });
+    })
     sentences.pop();
     return sentences;
 }

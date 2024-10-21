@@ -17,7 +17,7 @@ var HappyBirthday = {
         let names = [];
         this.hDays.forEach((item) => {
             names.push(item.name);
-        });
+        })
         return str = names.join(',');
     },
 

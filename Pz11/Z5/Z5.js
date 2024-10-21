@@ -66,10 +66,13 @@ titles__itemGroup.classList.add("titles__item");
 input.classList.add("input");
 input__itemName.classList.add("input__item");
 input__itemName.id = "input_1";
+input__itemName.dataset.error = "Вы не внесли имя или внесли его некорректно";
 input__itemLastname.classList.add("input__item");
 input__itemLastname.id = "input_2";
+input__itemLastname.dataset.error = "Вы не внесли фамилию или внесли ее некорректно";
 input__itemGroup.classList.add("input__item");
 input__itemGroup.id = "input_3";
+input__itemGroup.dataset.error = "Вы не внесли группу";
 btn.classList.add("btns");
 button.classList.add("button");
 
@@ -117,40 +120,31 @@ const check = (answer, condition, convertor) => {
     while (condition(answer) || !(answer.trim())) {
         alert("Вы ввели некорректный ответ");
         answer = convertor();
-    };
-};
-
-const isGood = (name, lastname, group) => {
-    if (!name) {
-        alert("Вы не внесли свое имя");
+    }
+}
+const isEmpty = (item) => {
+    if (!item.value.trim()) {
+        alert(item.dataset.error);
+        return true;
+    }
+    return false;
+}
+const isGood = (item) => {
+    if (!isWords(item.value.trim())) {
+        alert(item.dataset.error);
         return;
-    };
-    if (!lastname) {
-        alert("Вы не внесли свою фамилию");
-        return;
-    };
-    if (!group) {
-        alert("Вы не внесли свою группу");
-        return;
-    };
-    if (!isWords(name)) {
-        alert("Имя не может содержать цифры и иные знаки");
-        return;
-    };
-    if (!isWords(lastname)) {
-        alert("Фамилия не может содержать цифры и иные знаки");
-        return;
-    };
+    }
     return true;
-};
+}
 
 button.addEventListener("click", () => {
     const name = (input__itemName.value).trim();
     const lastname = (input__itemLastname.value).trim();
     const group = (input__itemGroup.value).trim();
 
-    const flag = isGood(name, lastname, group);
-    if (!flag) return;
+    if (isEmpty(input__itemName) || !isGood(input__itemName)) return;
+    if (isEmpty(input__itemLastname) || !isGood(input__itemLastname)) return;
+    if (isEmpty(input__itemGroup)) return;
 
     let answer1 = prompt('Сколько тебе лет?');
     check(answer1, (ans) => !isNumeric(ans), () => answer1 = prompt('Сколько тебе лет?'));

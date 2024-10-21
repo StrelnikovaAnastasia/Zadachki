@@ -26,7 +26,7 @@ body {
 
 .postcard_visible {
     display: flex;
-    width: 700px; 
+    width: 500px; 
     height: 300px;
 }
 
@@ -43,11 +43,12 @@ body {
 
 .theme-postcard {
     flex-direction: column;
-    width: 500px;
-    height: 300px;
+    width: 700px;
+    height: auto;
     background-color: #ADD8E6;
     border-radius: 10px;
-    border-color: #4169E1;
+    word-wrap: break-word;
+    overflow: scroll;
 }
 
 .titles__item {
@@ -80,7 +81,7 @@ body {
 
 }
 
-.input_text {
+.inputText {
     height: 60px;
     width: 600px;
     border-style: double;

@@ -50,10 +50,12 @@ header.classList.add("header");
 title.classList.add("title");
 inputTitle.classList.add("input");
 inputTitle.id = "inputTitle";
+inputTitle.dataset.error = "Вы не внесли название анкеты";
 text.classList.add("title");
 question.classList.add("question");
 inputText.classList.add("input");
 inputText.id = "inputText";
+inputText.dataset.error = "Вы не внесли текст вопроса";
 button.classList.add("button");
 listQuestions.id = "form";
 listQuestions.classList.add("listQuestions");
@@ -65,17 +67,18 @@ $.addEventListener("submit", (e) => { e.preventDefault() });
 let ind = 0;
 
 const isEmpty = (arg) => {
-    if (!arg) {
-        alert("Одно из полей ввода пустое")
+    if (!arg.value.trim()) {
+        alert(arg.dataset.error)
         return true;
     }
     return false;
 }
+
 button.addEventListener("click", () => {
     const title = inputTitle.value.trim();
     const text = inputText.value.trim();
 
-    if (isEmpty(title) || isEmpty(text)) return;
+    if (isEmpty(inputTitle) || isEmpty(inputText)) return;
 
     listQuestions.classList.replace("listQuestions", "listQuestions_visible")
     const quest = $.createElement("li");
